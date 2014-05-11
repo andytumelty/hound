@@ -1,0 +1,62 @@
+CREATE TABLE movies
+(id INTEGER PRIMARY KEY,
+title TEXT,
+year INTEGER,
+rated TEXT,
+released TEXT,
+runtime TEXT,
+plot TEXT,
+language TEXT,
+country TEXT,
+awards TEXT,
+metascore INTEGER,
+imdb_rating REAL,
+imdb_votes INTEGER,
+tomato_meter INTEGER,
+tomato_rating REAL,
+tomato_consensus TEXT,
+wiki_title TEXT,
+imdb_id TEXT,
+rt_title TEXT,
+created TEXT,
+updated TEXT);
+
+CREATE TABLE genres
+(id INTEGER PRIMARY KEY,
+genre TEXT);
+
+CREATE TABLE movie_genres
+(movie_id INTEGER,
+genre_id INTEGER,
+FOREIGN KEY(movie_id) REFERENCES movies(id),
+FOREIGN KEY(genre_id) REFERENCES genres(id));
+
+CREATE TABLE directors
+(id INTEGER PRIMARY KEY,
+director TEXT);
+
+CREATE TABLE movie_directors
+(movie_id INTEGER,
+director_id INTEGER,
+FOREIGN KEY(movie_id) REFERENCES movies(id),
+FOREIGN KEY(director_id) REFERENCES directors(id));
+
+CREATE TABLE writers
+(id INTEGER PRIMARY KEY,
+writer TEXT);
+
+CREATE TABLE movie_writers
+(movie_id INTEGER,
+writer_id INTEGER,
+FOREIGN KEY(movie_id) REFERENCES movies(id),
+FOREIGN KEY(writer_id) REFERENCES writers(id));
+
+CREATE TABLE actors
+(id INTEGER PRIMARY KEY,
+actor TEXT);
+
+CREATE TABLE movie_actors
+(movie_id INTEGER,
+actor_id INTEGER,
+FOREIGN KEY(movie_id) REFERENCES movies(id),
+FOREIGN KEY(actor_id) REFERENCES actors(id));

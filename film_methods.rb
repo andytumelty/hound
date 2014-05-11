@@ -151,7 +151,7 @@ class Imdb
   base_uri 'http://www.omdbapi.com/'
 
   def get_with_id(id)
-    @options = { :query => { i: id
+    @options = { :query => { i: id,
                              tomatoes: true },
                  :headers => { "User-Agent" => APPLICATION_NAME }}
     self.class.get('',@options)
