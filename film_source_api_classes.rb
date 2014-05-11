@@ -145,3 +145,15 @@ def get_wiki_film_data
   return nil
   puts "DONE Start: #{start}, End: #{Time.now}"
 end
+
+class Imdb
+  include HTTParty
+  base_uri 'http://www.omdbapi.com/'
+
+  def get_with_id(id)
+    @options = { :query => { i: id
+                             tomatoes: true },
+                 :headers => { "User-Agent" => APPLICATION_NAME }}
+    self.class.get('',@options)
+  end
+end
