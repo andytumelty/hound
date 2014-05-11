@@ -141,10 +141,6 @@ def get_wiki_film_data
     end
     print "[ETA] #{Time.now+((Time.now-start)*(total_links/i))}\n"
     i += 1
-    links.delete(link)
-    File.open("wiki_film_links_list.yml", "w") do |file|
-      file.write links.to_yaml
-    end
   end
   return nil
   puts "DONE Start: #{start}, End: #{Time.now}"
