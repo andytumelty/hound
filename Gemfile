@@ -48,3 +48,4 @@ gem 'sqlite3'
 gem 'awesome_print'
 
 gem 'delayed_job_active_record'
+gem 'unicorn'
