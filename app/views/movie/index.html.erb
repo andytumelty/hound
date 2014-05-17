@@ -1,0 +1,41 @@
+<h1>Movies#index</h1>
+
+<style>
+  td, th{
+    padding: 0 5px;
+  }
+  .center{
+    text-align: center;
+  }
+</style>
+
+<table>
+  <thead>
+    <th>title</th>
+    <th>rated</th>
+    <th>released</th>
+    <th>runtime</th>
+    <th>country</th>
+    <th>awards</th>
+    <th>metascore</th>
+    <th>imdb<br>rating</th>
+    <th>imdb<br>votes</th>
+    <th>tomato<br>meter</th>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %> (<%= movie.year %>)</td>
+        <td><%= movie.rated %></td>
+        <td><%= movie.released %></td>
+        <td><%= movie.runtime %></td>
+        <td><%= movie.country %></td>
+        <td><%= movie.awards %></td>
+        <td class="center"><%= movie.metascore %></td>
+        <td class="center"><%= movie.imdb_rating %></td>
+        <td class="center"><%= movie.imdb_votes %></td>
+        <td class="center"><%= movie.tomato_meter %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

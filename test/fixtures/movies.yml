@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  year: 1
+  rated: MyString
+  released: MyString
+  runtime: MyString
+  plot: MyText
+  country: MyString
+  awards: MyString
+  metascore: 1
+  imdb_rating: 1.5
+  imdb_votes: 1
+  tomato_meter: 1.5
+  tomato_consensus: MyText
+  wiki_title: MyString
+  imdb_id: MyString
+  rt_title: MyString
+
+two:
+  title: MyString
+  year: 1
+  rated: MyString
+  released: MyString
+  runtime: MyString
+  plot: MyText
+  country: MyString
+  awards: MyString
+  metascore: 1
+  imdb_rating: 1.5
+  imdb_votes: 1
+  tomato_meter: 1.5
+  tomato_consensus: MyText
+  wiki_title: MyString
+  imdb_id: MyString
+  rt_title: MyString

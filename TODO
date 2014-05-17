@@ -13,3 +13,6 @@
 -- Delete Account
 - Tracking user likes
 - Migrate from sqlite3
+- imdb links won't ever be deleted
+- split data scrape to dump data in a holding table, to be processed separately
+- order search by popularity
