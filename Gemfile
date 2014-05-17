@@ -46,3 +46,5 @@ gem 'sqlite3'
 
 # development debugging
 gem 'awesome_print'
+
+gem 'delayed_job_active_record'
