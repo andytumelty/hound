@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517124502) do
+ActiveRecord::Schema.define(version: 20140517131712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20140517124502) do
 
   add_index "genres_movies", ["genre_id", "movie_id"], name: "index_genres_movies_on_genre_id_and_movie_id", unique: true, using: :btree
 
-  create_table "imdb_raw_data", force: true do |t|
+  create_table "imdb_raw_movies", force: true do |t|
     t.string   "Title"
     t.integer  "Year"
     t.string   "Rated"
