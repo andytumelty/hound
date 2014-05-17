@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517114047) do
+ActiveRecord::Schema.define(version: 20140517124502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,45 @@ ActiveRecord::Schema.define(version: 20140517114047) do
 
   add_index "genres_movies", ["genre_id", "movie_id"], name: "index_genres_movies_on_genre_id_and_movie_id", unique: true, using: :btree
 
+  create_table "imdb_raw_data", force: true do |t|
+    t.string   "Title"
+    t.integer  "Year"
+    t.string   "Rated"
+    t.string   "Released"
+    t.string   "Runtime"
+    t.string   "Genre"
+    t.text     "Director"
+    t.text     "Writer"
+    t.text     "Actors"
+    t.text     "Plot"
+    t.string   "Language"
+    t.string   "Country"
+    t.string   "Awards"
+    t.text     "Poster"
+    t.integer  "Metascore"
+    t.float    "imdbRating"
+    t.integer  "imdbVotes"
+    t.string   "imdbID"
+    t.string   "Type"
+    t.float    "tomatoMeter"
+    t.string   "tomatoImage"
+    t.float    "tomatoRating"
+    t.integer  "tomatoReviews"
+    t.integer  "tomatoFresh"
+    t.integer  "tomatoRotten"
+    t.text     "tomatoConsensus"
+    t.integer  "tomatoUserMeter"
+    t.float    "tomatoUserRating"
+    t.integer  "tomatoUserReviews"
+    t.string   "DVD"
+    t.string   "BoxOffice"
+    t.string   "Production"
+    t.string   "Website"
+    t.text     "Response"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "movies", force: true do |t|
     t.string   "title"
     t.integer  "year"
@@ -90,6 +129,7 @@ ActiveRecord::Schema.define(version: 20140517114047) do
     t.string   "rt_title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_name"
   end
 
   create_table "movies_writers", id: false, force: true do |t|
