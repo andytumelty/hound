@@ -11,6 +11,7 @@
 
 <table>
   <thead>
+    <th>ID</th>
     <th>title</th>
     <th>rated</th>
     <th>released</th>
@@ -25,6 +26,7 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
+        <td><%= movie.id %></td>
         <td><%= movie.title %> (<%= movie.year %>)</td>
         <td><%= movie.rated %></td>
         <td><%= movie.released %></td>
