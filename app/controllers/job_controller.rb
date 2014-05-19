@@ -4,7 +4,12 @@ class JobController < ApplicationController
 
   def get_imdb_all
     Delayed::Job.enqueue ImdbGetAllJob.new
-    flash[:notice] = "Job triggered"  
-    redirect_to jobs_path
+    redirect_to jobs_path, notice: "Job Triggered"
+  end
+
+  def get_imdb_posters
+    #require "#{Rails.root}/lib/imdb_get_posters.rb"
+    Delayed::Job.enqueue ImdbGetPosters.new
+    redirect_to jobs_path, notice: "Job Triggered"
   end
 end
