@@ -42,7 +42,7 @@ gem 'spring',        group: :development
 gem 'httparty'
 
 # devlopment database, eventually we can get rid of this
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # development debugging
 gem 'awesome_print'
