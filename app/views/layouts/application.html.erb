@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hound</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
-<a href="/movies">movies</a> | <a href="/jobs">jobs</a>
-<%= yield %>
+  <head>
+    <title>Hound</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-</body>
+    <div id="nav">
+      <% if current_user %>
+        <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+        <%= link_to "Logout", :logout, method: :get %>
+      <% else %>
+        <%= link_to "Register", new_user_path %> |
+        <%= link_to "Login", :login %>
+      <% end %>
+    </div>
+
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+    
+    <a href="/movies">movies</a> | <a href="/jobs">jobs</a>
+    
+    <%= yield %>
+
+  </body>
 </html>
