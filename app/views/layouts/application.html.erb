@@ -8,23 +8,28 @@
   </head>
   <body>
 
-    <div id="nav">
-      <% if current_user %>
-        <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-        <%= link_to "Logout", :logout, method: :get %>
-      <% else %>
-        <%= link_to "Register", new_user_path %> |
-        <%= link_to "Login", :login %>
-      <% end %>
+    <div id="nav" style="clear:both;">
+      <div style="float:left;">
+        <a href="/movies">movies</a> |
+        <a href="/jobs">jobs</a>
+      </div>
+      <div style="float:right;">
+        <% if current_user %>
+          <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+          <%= link_to "Logout", :logout, method: :get %>
+        <% else %>
+          <%= link_to "Register", new_user_path %> |
+          <%= link_to "Login", :login %>
+        <% end %>
+      </div>
     </div>
 
-    <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash #{key}" %>
-    <% end %>
-    
-    <a href="/movies">movies</a> | <a href="/jobs">jobs</a>
-    
-    <%= yield %>
-
+    <div style="clear:both;">
+      <% flash.each do |key, value| %>
+        <%= content_tag :div, value, class: "flash #{key}" %>
+      <% end %>
+      
+      <%= yield %>
+    </div>
   </body>
 </html>
