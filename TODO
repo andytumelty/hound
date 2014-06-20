@@ -21,3 +21,4 @@ RESTRUCTURE TO-DO - JIRA? User Story cards? Keep as to-do?
 - document api
 - randomise intial movie list (grouped: recently released, featured, action films, how about these, rom coms near valentines etc)
 - extend view to include genres, actors, image path
+- API base controller class with error catches, skip authenticity token
