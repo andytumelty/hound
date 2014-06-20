@@ -1,0 +1,1 @@
+json.(movie, :id, :title, :year, :imdb_id, :imdb_rating, :tomato_meter)

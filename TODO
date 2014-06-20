@@ -1,3 +1,5 @@
+RESTRUCTURE TO-DO - JIRA? User Story cards? Keep as to-do?
+
 - Error handling on all methods
 - Getting data from imdb
 -- Data about the films we do have
@@ -6,26 +8,16 @@
 - Marking films as the same
 - Refresh data from different sources
 - Marking incorrect data
-- User management system
--- Register
--- Login
--- Forgot Password
 -- Delete Account
 - Tracking user likes
-- Migrate from sqlite3
 - imdb links won't ever be deleted
-- split data scrape to dump data in a holding table, to be processed separately
 - order search by popularity
-
-Add token based authentication
-
-Confirm routes are correct to user resources
-sort out routes in general
-
-Prevent access to certain pages without authentication
-
-admin section for user administration, jobs
-
-better flow for login, view profile, then edit profile
-
-users can only view, edit, delete their own profiles
+- Confirm routes are correct to user resources
+- sort out routes in general
+- Prevent access to certain pages without authentication
+- admin section for user administration, jobs
+- better flow for login, view profile, then edit profile
+- users can only view, edit, delete their own profiles
+- document api
+- randomise intial movie list (grouped: recently released, featured, action films, how about these, rom coms near valentines etc)
+- extend view to include genres, actors, image path
