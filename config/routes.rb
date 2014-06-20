@@ -12,9 +12,21 @@ Rails.application.routes.draw do
   # get 'user_sessions/create'
   # get 'user_sessions/destroy'
 
-  get 'movies' => 'movie#index', :as => :movies
-  get 'jobs' => 'job#index'
-  get 'job/:action' => 'job'
+  #get 'movies' => 'movie#index', :as => :movies
+  
+  resources :movies
+  resources :jobs
+
+  #get 'jobs' => 'job#index'
+  #get 'job/:action' => 'job'
 
   resources :password_resets
+
+
+  namespace :api, :defaults => { :format => 'json' } do
+    namespace :v1 do
+      resources :movies
+      get 'auth' => 'users#api_auth'
+    end
+  end
 end

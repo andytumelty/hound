@@ -16,3 +16,16 @@
 - imdb links won't ever be deleted
 - split data scrape to dump data in a holding table, to be processed separately
 - order search by popularity
+
+Add token based authentication
+
+Confirm routes are correct to user resources
+sort out routes in general
+
+Prevent access to certain pages without authentication
+
+admin section for user administration, jobs
+
+better flow for login, view profile, then edit profile
+
+users can only view, edit, delete their own profiles
