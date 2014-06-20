@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_create :set_auth_token
   before_filter :require_login, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -63,12 +64,18 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    def set_auth_token
+      return if auth_token.present?
+
+      begin
+        self.auth_token = SecureRandom.hex
+      end while self.class.exists?(auth_token: self.auth_token)
+    end
+
     def set_user
       @user = User.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
