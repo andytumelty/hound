@@ -8,7 +8,6 @@ RESTRUCTURE TO-DO - JIRA? User Story cards? Keep as to-do?
 - Marking films as the same
 - Refresh data from different sources
 - Marking incorrect data
--- Delete Account
 - Tracking user likes
 - imdb links won't ever be deleted
 - order search by popularity
@@ -16,13 +15,44 @@ RESTRUCTURE TO-DO - JIRA? User Story cards? Keep as to-do?
 - sort out routes in general
 - Prevent access to certain pages without authentication
 - better flow for login, view profile, then edit profile
-- users can only view, edit, delete their own profiles
-- document api
 - randomise intial movie list (grouped: recently released, featured, action films, how about these, rom coms near valentines etc)
-- extend view to include genres, actors, image path
 - API base controller class with error catches, skip authenticity token
-- user administration
--- triggering reset passwords
--- changing email
--- making user admin
-- allow user updating without the need for password updates too
+- Job to get and parse latest text data from imdb?
+
+[ ] Extend API view to include genres, actors, image path
+
+[ ] API Documentation
+[ ] Rails Application architecture
+[ ] Application integration architecture (app, backend, s3)
+
+User administration
+[ ] Only an admin can do these tasks for other users
+[ ] Remove password change restrictions on user update
+[ ] Update email
+[ ] Trigger password resets
+[ ] Change api key (only admin)
+[ ] Change is_admin flag (only admin)
+[ ] Delete account
+[ ] Change password
+
+Job administration
+[x] Only admins can view jobs
+[ ] Only admins can trigger jobs
+[ ] Only admins can update scheduled jobs
+[ ] View scheduled jobs
+[ ] View scheduled jobs status
+[ ] Cancel jobs
+[ ] Cancel all jobs
+[ ] Worker amount administration (scale up and down from web panel)
+[ ] Job Estimated Time to Completion
+[ ] Break current jobs down into manageable chunks
+[ ] Job meta data
+  [ ] Who triggered the job
+  [ ] When the job was triggered
+  [ ] When the job was started
+  [ ] The current % complete
+  [ ] When the job was completed
+  [ ] Total time it took
+  [ ] Job status (scheduled, running, cancelled, completed)
+
+  This product uses the TMDb API but is not endorsed or certified by TMDb.
