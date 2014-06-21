@@ -25,4 +25,12 @@ class ApplicationController < ActionController::Base
   def not_authenticated
     redirect_to login_path, alert: "Please login first"
   end
+
+  def unauthorized
+    redirect_to root_path, alert: "Unauthorized access"
+  end
+
+  def require_admin
+    redirect_to root_path, alert: "Unauthorized access" if !current_user.is_admin
+  end
 end

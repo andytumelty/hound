@@ -1,7 +1,8 @@
 class JobsController < ApplicationController
   before_filter :require_login
+  before_action :require_admin
+
   def index
-    respond_to
   end
 
   def get_imdb_all
